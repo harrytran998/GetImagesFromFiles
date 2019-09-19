@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "fs": "^0.0.1-security",
+    "fs": "^0.0.2",
     "image-downloader": "^3.4.2",
     "mz": "^2.7.0"
   }
