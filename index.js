@@ -35,7 +35,7 @@ const downloadImages = async (listUrl, resulFolder) => {
 
 const renewFolder = folderPath => {
 	if (fs.existsSync(folderPath)) {
-		fs.rmdirSync(folderPath)
+		fs.rmdirSync(folderPath, { recursive: true })
 	}
 	if (!fs.existsSync(folderPath)) {
 		fs.mkdirSync(folderPath)
