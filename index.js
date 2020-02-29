@@ -33,10 +33,17 @@ const downloadImages = async (listUrl, resulFolder) => {
 	}
 }
 
-const main = () => {
-	if (!fs.existsSync(resultFolder)) {
-		fs.mkdirSync(resultFolder)
+const renewFolder = folderPath => {
+	if (fs.existsSync(folderPath)) {
+		fs.rmdirSync(folderPath)
 	}
+	if (!fs.existsSync(folderPath)) {
+		fs.mkdirSync(folderPath)
+	}
+}
+
+const main = () => {
+	renewFolder(resultFolder)
 	const listUrl = getUrlImagesFromFile(fileName)
 	downloadImages(listUrl, resultFolder).catch(err => console.log(err))
 }
